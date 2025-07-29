@@ -1,14 +1,16 @@
 from __future__ import annotations
 
+import hashlib
 import json
 import unittest
 
 import numpy as np
 from scipy.special import expit, logit
 
-from .data import FEATURES, ROOT, digest, features
+from .data import FEATURES, features
 from .methods import (audit, bin_ids, budget_threshold, clustered_interval, export_classifier,
                       fit_classifier, fit_patches, membership, policy, predict_classifier, replay, route_mask)
+from .reference import REFERENCE, artifact_bytes, load_reference
 
 
 class ResearchChecks(unittest.TestCase):
@@ -84,18 +86,14 @@ class ResearchChecks(unittest.TestCase):
 class RecordedExperimentChecks(unittest.TestCase):
     @classmethod
     def setUpClass(cls):
-        pointer = ROOT / "runs" / "latest.json"
-        if not pointer.exists():
-            raise unittest.SkipTest("Run python -m research.run for recorded-data integration checks")
-        cls.directory = ROOT / "runs" / json.loads(pointer.read_text())["run_id"]
-        cls.summary = json.loads((cls.directory / "summary.json").read_text())
-        cls.frozen = json.loads((cls.directory / "frozen.json").read_text())
-        cls.rows = json.loads((cls.directory / "predictions.json").read_text())
+        reference = load_reference()
+        cls.directory = REFERENCE
+        cls.summary, cls.frozen, cls.rows = reference["summary"], reference["frozen"], reference["rows"]
 
     def test_frozen_artifacts_and_split_integrity(self):
         manifest = json.loads((self.directory / "manifest.json").read_text())
         for name, expected in manifest["files"].items():
-            self.assertEqual(digest(self.directory / name), expected)
+            self.assertEqual(hashlib.sha256(artifact_bytes(self.directory, name)).hexdigest(), expected)
         splits = json.loads((self.directory / "splits.json").read_text())
         ids = [task for tasks in splits.values() for task in tasks]
         self.assertEqual(len(ids), 1055)
