@@ -1,0 +1,57 @@
+{
+  "created_at": "2026-11-07T01:19:49.680906+00:00",
+  "smoke": false,
+  "scope": "Exploratory extension on an already-inspected public-data archive; not a new confirmatory dataset",
+  "reference_run": "a8630092fa9e",
+  "protocol_sha256": "cd928f9b225c1505c1e94bcae09c88edffec1cc92ed32c9bfe027e4f9dfbc079",
+  "python": "3.13.5",
+  "platform": "macOS-26.6.2-arm64-arm-64bit-Mach-O",
+  "folds": 15,
+  "prediction_rows": 316500,
+  "task_cost_rows": 379800,
+  "task_clusters": 1055,
+  "dependencies": {
+    "numpy": "2.1.3",
+    "pandas": "2.2.3",
+    "scipy": "1.15.3",
+    "scikit-learn": "1.6.1",
+    "threadpoolctl": "3.5.0"
+  },
+  "code_sha256": {
+    "research/__init__.py": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "research/advanced.py": "0b2f170964be708cb891c1f0bdd5eb836db63e5cf94e3a7c816372d82d1d368d",
+    "research/auditors.py": "b7f7a5b14950127919cd524ab58b1458bf4cba59f28ddb1487640f2b598dba00",
+    "research/data.py": "104476866364d5e5e1dfc5dd2e1d0bc4bd1408d66f205c182daf08083ed51cd3",
+    "research/figures.py": "1157ef3026030fe78345500df30e172454e5deebd50823ca705f4827bbbbefc6",
+    "research/methods.py": "7af904fb315022b75f3b71401a7a3fa40eed3aad5e4510d4b85756374623367d",
+    "research/reference.py": "5faf6f96cca69cfa133f3664ada6ccc5cc788b979114ee6f9c033e9eb04b8911",
+    "research/reproduce.py": "cc6c725fd22f5403c5cd7a0a4345246bf318342d2e4bd981d18821405aa04961",
+    "research/run.py": "ccbedb6bbd58cb212cd88b9f64ae9057e47075925eeca038886c8ca921ba31c7",
+    "research/simulations.py": "20e5ba443b93b8e7ec6a0b92737fbbb92e1bdc3ce9a36ab246176f44756f3dee",
+    "research/test_advanced.py": "9238930fe9f8f41f2c4f155e7cfda9c8bde5cb37b973416f3eab2db350777590",
+    "research/test_publication.py": "4d7732bc12b1d514623c2db06696735de5efbabf256c34a898537477e49302eb",
+    "research/test_reproduce.py": "cdf00db8953f786fd29d7347e23065333c81e5b7c6cb3eeca0ff9d25d4726bcc",
+    "research/test_research.py": "8fd00db8373f1ea381e4d7f52052199b1b3433204975061ad91143c0f5af3bdf"
+  },
+  "interval_scope": "Descriptive task bootstrap conditional on overlapping fitted models; excludes refitting, split uncertainty and shared-training dependence",
+  "tables": {
+    "fold_metrics": 150,
+    "routing": 495,
+    "decision_costs": 1800,
+    "mixture_shift": 1500,
+    "sample_complexity": 135,
+    "paired_comparisons": 20,
+    "cost_comparisons": 120,
+    "repeat_summary": 30
+  },
+  "caveats": [
+    "All candidates from a task stay in one role in a fold",
+    "Score calibration never uses confirmation labels",
+    "Auditor confirmation blocks are disjoint within a fit",
+    "All methods have fixed settings, with no test-based selection",
+    "Repeated folds share tasks and training data; they are not independent replications",
+    "Cost units and mixture shifts are stipulated scenarios, not production measurements",
+    "Bootstrap confirmation intervals are approximate, not population multicalibration or exact false-discovery guarantees",
+    "Cost-threshold comparator expanded after the first exploratory run; both the original budget grid and exact validation-boundary selection are retained"
+  ]
+}

@@ -1,0 +1,18 @@
+{
+  "files": {
+    "summary.json": "83347552a59975f2665dc42a41908edd7bba17e8b6a7f5f7b8c609b1b0e3c4c3",
+    "splits.json": "662bbda6f05ee08f36151808f960c208a38985192f537c9fdccd145b8bdeb9eb",
+    "routing.csv": "50189e4d5529c251ab9d10d266e859eadf1de2fb616253b2670f8dad4cbf0f0a",
+    "predictions.csv.gz": "b8b9c2abc3b9f6a377f856c20b427dac1e7ec144072c413e6f13ed79f1af9220",
+    "mixture_shift.csv": "16624a7ad38c6d337dc38a43e25848fb1b8a6a9772c03474a6f715adadd0a7d5",
+    "sample_complexity.csv": "5c19492f08175fe925322bcc8ce8d2921cd720374fcade579fe16f41756783be",
+    "decision_costs.csv": "74e083f393bafba9e273b14e4de3cc414715289f58fbdd2b2de91124a3a564cf",
+    "paired_comparisons.csv": "6dc49439fdaa32a30cb42116ddad207a5a645c3ca5bfcd13c96e19d5bdc606fb",
+    "repeat_summary.csv": "1e6d952e6f8fa1d58fc4c1b6a4b61b1a7192258222c0c1ca99f564f48086c546",
+    "protocol.json": "cd928f9b225c1505c1e94bcae09c88edffec1cc92ed32c9bfe027e4f9dfbc079",
+    "fold_metrics.csv": "c099bb7797305d3ab1be0d20a455a0067935e8c1fa99d21c8a85f3dffab594d3",
+    "task_costs.csv.gz": "0bcfe41e5a0a9f3511689db74478f2d7e24e192c1c92b28e128adf4725c52b85",
+    "auditor_rules.json": "7d9a65a6f604ac164d66a0329418269625cc9ae84ee57b7e8b593572b4b6f3b3",
+    "cost_comparisons.csv": "223eb2859faa75cfeea0a6576dde2cbc87ad059c3e68389e38ffaf42dda825f7"
+  }
+}

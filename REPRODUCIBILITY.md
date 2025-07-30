@@ -2,6 +2,8 @@
 
 This publication check used Python 3.13.5 on macOS arm64 with the pinned `requirements.txt`. It was performed with AI assistance. The original reference remains under `research/runs/a8630092fa9e/`; new outputs are written separately.
 
+The later repeated-fold extension is documented in [ADVANCED_METHODS.md](ADVANCED_METHODS.md). Its numerical artifacts and manifests live separately in `advanced_results/` and `simulation_results/`. The agreement table below concerns the original reference only, not that extension.
+
 ## What is included
 
 The archive contains 10,550 candidate records: sixteen input measurements, primary and alternate labels, task/candidate identifiers, partition assignments, tie keys, group memberships, and the nine methods' original probabilities. Raw prompts, token streams, generated programs and benchmark tests are not included in this numerical archive.
