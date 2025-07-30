@@ -1,0 +1,129 @@
+{
+  "version": 1,
+  "authored_date": "2026-11-06",
+  "question": "When do learned subgroup corrections generalize, and does better confidence improve escalation decisions?",
+  "status": "Exploratory extension on an already-inspected public-data archive; not a new confirmatory dataset",
+  "reference_run": "a8630092fa9e",
+  "seeds": [
+    73129,
+    104729,
+    130363
+  ],
+  "outer_folds": 5,
+  "role_fractions": {
+    "train": 0.45,
+    "score_calibration": 0.15,
+    "discovery": 0.15,
+    "confirmation": 0.125,
+    "validation": 0.125
+  },
+  "models": {
+    "logistic": {
+      "C": 1,
+      "max_iter": 2000
+    },
+    "histogram_boosting": {
+      "learning_rate": 0.05,
+      "max_iter": 120,
+      "max_leaf_nodes": 7,
+      "min_samples_leaf": 40,
+      "l2_regularization": 10,
+      "early_stopping": false
+    }
+  },
+  "auditor": {
+    "bins": 5,
+    "max_depth": 2,
+    "min_samples_leaf": 40,
+    "min_discovery_tasks": 20,
+    "min_confirmation_tasks": 8,
+    "epsilon": 0.03,
+    "max_rounds": 3,
+    "shrinkage_tasks": 20,
+    "bootstrap_replicates": 1000,
+    "alpha": 0.05
+  },
+  "fixed_groups": {
+    "epsilon": 0.03,
+    "min_tasks": 20,
+    "max_updates": 30
+  },
+  "routing": {
+    "budgets": [
+      0.1,
+      0.3,
+      0.5
+    ],
+    "cost_grid_budgets": [
+      0,
+      0.1,
+      0.2,
+      0.3,
+      0.4,
+      0.5,
+      0.6,
+      0.7,
+      0.8,
+      0.9,
+      1
+    ],
+    "primary_cost": 1,
+    "alternate_cost": 4,
+    "failure_losses": [
+      2,
+      5,
+      10,
+      20,
+      50
+    ]
+  },
+  "shift": {
+    "features": [
+      "ast_depth",
+      "log_prompt_chars"
+    ],
+    "target_high_fractions": [
+      0,
+      0.25,
+      0.5,
+      0.75,
+      1
+    ]
+  },
+  "sample_sizes": [
+    30,
+    90,
+    null
+  ],
+  "bootstrap_replicates": 1000,
+  "simulation": {
+    "seeds": [
+      11,
+      23,
+      37,
+      53,
+      71,
+      89,
+      107,
+      131,
+      151,
+      173
+    ],
+    "calibration_tasks": [
+      120,
+      360,
+      1080
+    ],
+    "test_tasks": 2000,
+    "candidates_per_task": 10
+  },
+  "restrictions": [
+    "All candidates from a task stay in one role in a fold",
+    "Score calibration never uses confirmation labels",
+    "Auditor confirmation blocks are disjoint within a fit",
+    "All methods have fixed settings, with no test-based selection",
+    "Repeated folds share tasks and training data; they are not independent replications",
+    "Cost units and mixture shifts are stipulated scenarios, not production measurements",
+    "Bootstrap confirmation intervals are approximate, not population multicalibration or exact false-discovery guarantees"
+  ]
+}
