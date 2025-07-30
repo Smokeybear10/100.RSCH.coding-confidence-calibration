@@ -44,3 +44,10 @@ jobs:
           jupyter nbconvert --to notebook --execute advanced_analysis.ipynb
           --output checked-advanced.ipynb --output-dir work
           --ExecutePreprocessor.timeout=120
+      - name: Check matched controls on separate pilot seeds
+        run: python -m research.confirmation_study --output work/ci-confirmation --smoke
+      - name: Execute the confirmation study notebook
+        run: >-
+          jupyter nbconvert --to notebook --execute confirmation_analysis.ipynb
+          --output checked-confirmation.ipynb --output-dir work
+          --ExecutePreprocessor.timeout=120
