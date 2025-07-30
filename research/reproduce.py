@@ -210,3 +210,4 @@ if __name__ == "__main__":
     report = reproduce(args.output, args.refit)
     print(json.dumps({"mode": report["mode"], "all_probabilities_match": report["all_probabilities_match"],
                       "maximum_probability_difference": max(row["maximum_probability_difference"] for row in report["reference_comparison"])}, indent=2))
+    raise SystemExit(0 if report["all_probabilities_match"] else 1)
