@@ -1,8 +1,8 @@
 # Learned Calibration and Decision Value
 
-The extension asks two questions: **when do discovered subgroup corrections generalize, and when does a confidence estimate help choose an action?** It adds learned auditing, independent confirmation, repeated task-separated evaluation, stronger predictive controls, routing-benefit estimation, sample-budget and mixture experiments, and known-probability simulations.
+The main experiment tests whether a residual tree can find useful subgroup corrections without fitting noise. Proposed rules are checked on separate task blocks, then compared with unconfirmed updates. Simulations with known probabilities test the resulting false-correction and detection-power tradeoff. A follow-up evaluates whether confidence or predicted escalation benefit gives better routing decisions.
 
-This is an exploratory extension of the previously inspected CALIBRI archive. Repartitioning the same sample does not create new independent data. The original reference experiment, results and notebooks remain intact.
+These experiments reuse the inspected CALIBRI archive. The original single-split reference is documented in [METHODS.md](METHODS.md).
 
 ## Evaluation design
 
