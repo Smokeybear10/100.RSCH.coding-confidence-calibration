@@ -1,0 +1,145 @@
+scenario,shared_uniform,budget,contrast,left,right,metric,difference,low,high,seeds,primary
+calibrated_null,False,120,gate_with_independent_estimate,independent_gated,independent_fixed,known_probability_mse,-5.389776476530547e-05,-9.073486634198992e-05,-2.407768732575969e-05,100,True
+calibrated_null,False,120,gate_with_reused_estimate,discovery_gated,discovery_fixed,known_probability_mse,-0.00018539678407322442,-0.0002879720047076047,-9.44395327415667e-05,100,False
+calibrated_null,False,120,independent_vs_reused_estimate,independent_fixed,discovery_fixed,known_probability_mse,-0.00014832066447831746,-0.00025001941068279293,-6.596285501039253e-05,100,False
+calibrated_null,False,120,gate_vs_tuned_independent,independent_gated,independent_shrinkage,known_probability_mse,-1.1577554926302226e-05,-3.226354321977322e-05,1.222215455504932e-05,100,False
+calibrated_null,False,120,gate_vs_pooled_shrinkage,independent_gated,pooled_shrinkage,known_probability_mse,-0.0006480982989087914,-0.00091373778713793,-0.00041831027737394263,100,False
+calibrated_null,False,120,gate_estimator_interaction,independent gate effect,discovery gate effect,known_probability_mse,0.00013149901930791896,5.460182665096742e-05,0.00022399835435591028,100,False
+calibrated_null,False,360,gate_with_independent_estimate,independent_gated,independent_fixed,known_probability_mse,-8.200749403554555e-05,-0.00010951457739423798,-5.695494848029613e-05,100,True
+calibrated_null,False,360,gate_with_reused_estimate,discovery_gated,discovery_fixed,known_probability_mse,-0.0005464563058828842,-0.0006270080951986933,-0.0004731847866648679,100,False
+calibrated_null,False,360,independent_vs_reused_estimate,independent_fixed,discovery_fixed,known_probability_mse,-0.0004806857085557044,-0.0005644611808612198,-0.0004013141133233464,100,False
+calibrated_null,False,360,gate_vs_tuned_independent,independent_gated,independent_shrinkage,known_probability_mse,-6.646147125036807e-05,-0.00010289693801376929,-3.561445656850107e-05,100,False
+calibrated_null,False,360,gate_vs_pooled_shrinkage,independent_gated,pooled_shrinkage,known_probability_mse,-0.0001521208602904556,-0.00023217982144860266,-8.722520449829387e-05,100,False
+calibrated_null,False,360,gate_estimator_interaction,independent gate effect,discovery gate effect,known_probability_mse,0.0004644488118473386,0.0003856833442932778,0.0005499713725529346,100,False
+calibrated_null,False,1080,gate_with_independent_estimate,independent_gated,independent_fixed,known_probability_mse,-2.825590871151023e-05,-3.928102036169565e-05,-1.8824704145911068e-05,100,True
+calibrated_null,False,1080,gate_with_reused_estimate,discovery_gated,discovery_fixed,known_probability_mse,-0.0002325072121984828,-0.00026314964824782517,-0.00020275972310062533,100,False
+calibrated_null,False,1080,independent_vs_reused_estimate,independent_fixed,discovery_fixed,known_probability_mse,-0.00022710442473505496,-0.00025869222548848046,-0.00019595385468107495,100,False
+calibrated_null,False,1080,gate_vs_tuned_independent,independent_gated,independent_shrinkage,known_probability_mse,-1.749937854034906e-05,-3.3379233470356275e-05,-6.6276294077731635e-06,100,False
+calibrated_null,False,1080,gate_vs_pooled_shrinkage,independent_gated,pooled_shrinkage,known_probability_mse,-4.159257716227455e-05,-6.19469724867009e-05,-2.4346538446333385e-05,100,False
+calibrated_null,False,1080,gate_estimator_interaction,independent gate effect,discovery gate effect,known_probability_mse,0.00020425130348697258,0.00017451381138140526,0.00023523761750684965,100,False
+calibrated_null,True,120,gate_with_independent_estimate,independent_gated,independent_fixed,known_probability_mse,-0.0004606098911868421,-0.0008142998424444933,-0.00015926504817177252,100,True
+calibrated_null,True,120,gate_with_reused_estimate,discovery_gated,discovery_fixed,known_probability_mse,-0.0007732366369033836,-0.0012552761828522627,-0.00037481274136539727,100,False
+calibrated_null,True,120,independent_vs_reused_estimate,independent_fixed,discovery_fixed,known_probability_mse,-0.00031262674571654156,-0.0008201438923576078,0.00017092256571996675,100,False
+calibrated_null,True,120,gate_vs_tuned_independent,independent_gated,independent_shrinkage,known_probability_mse,-0.0005158614419848685,-0.0013776154960492256,-3.50228736821151e-05,100,False
+calibrated_null,True,120,gate_vs_pooled_shrinkage,independent_gated,pooled_shrinkage,known_probability_mse,-0.003071383455620503,-0.004089568398141001,-0.0021214894921311586,100,False
+calibrated_null,True,120,gate_estimator_interaction,independent gate effect,discovery gate effect,known_probability_mse,0.00031262674571654156,-0.00017092256571996678,0.0008201438923576077,100,False
+calibrated_null,True,360,gate_with_independent_estimate,independent_gated,independent_fixed,known_probability_mse,-0.00030056936630383973,-0.0004130457895492455,-0.00020069554608238133,100,True
+calibrated_null,True,360,gate_with_reused_estimate,discovery_gated,discovery_fixed,known_probability_mse,-0.002137193078712793,-0.002475259092334813,-0.0018122142489718025,100,False
+calibrated_null,True,360,independent_vs_reused_estimate,independent_fixed,discovery_fixed,known_probability_mse,-0.0020611410505500228,-0.002384113373340924,-0.0017521721275586858,100,False
+calibrated_null,True,360,gate_vs_tuned_independent,independent_gated,independent_shrinkage,known_probability_mse,-0.00022221877437804342,-0.000398028501198213,-8.655204358093955e-05,100,False
+calibrated_null,True,360,gate_vs_pooled_shrinkage,independent_gated,pooled_shrinkage,known_probability_mse,-0.0009649209734501555,-0.0013781540003358285,-0.0006118119141012672,100,False
+calibrated_null,True,360,gate_estimator_interaction,independent gate effect,discovery gate effect,known_probability_mse,0.0018366237124089531,0.001515714664150216,0.002168153918642361,100,False
+calibrated_null,True,1080,gate_with_independent_estimate,independent_gated,independent_fixed,known_probability_mse,-0.00011589067862677612,-0.0001497810116916766,-8.658548901112943e-05,100,True
+calibrated_null,True,1080,gate_with_reused_estimate,discovery_gated,discovery_fixed,known_probability_mse,-0.0010381454170678216,-0.001152269534915429,-0.0009264797415040263,100,False
+calibrated_null,True,1080,independent_vs_reused_estimate,independent_fixed,discovery_fixed,known_probability_mse,-0.0009458107212979824,-0.0010610654596594769,-0.0008334543641266468,100,False
+calibrated_null,True,1080,gate_vs_tuned_independent,independent_gated,independent_shrinkage,known_probability_mse,-0.00010204249398003984,-0.00014787348432949835,-6.0726026754239924e-05,100,False
+calibrated_null,True,1080,gate_vs_pooled_shrinkage,independent_gated,pooled_shrinkage,known_probability_mse,-0.0002775653952301322,-0.00040009810762664885,-0.0001692798702119189,100,False
+calibrated_null,True,1080,gate_estimator_interaction,independent gate effect,discovery gate effect,known_probability_mse,0.0009222547384410454,0.000810642373252559,0.0010358184992810121,100,False
+strong_common,False,120,gate_with_independent_estimate,independent_gated,independent_fixed,known_probability_mse,8.786364759255809e-05,-7.333140935558344e-08,0.0002059043787968237,100,True
+strong_common,False,120,gate_with_reused_estimate,discovery_gated,discovery_fixed,known_probability_mse,0.00010690942687029682,-5.477221893435189e-06,0.0002554565691125987,100,False
+strong_common,False,120,independent_vs_reused_estimate,independent_fixed,discovery_fixed,known_probability_mse,2.51411465306005e-05,-4.752500277325303e-05,0.00010752109804952479,100,False
+strong_common,False,120,gate_vs_tuned_independent,independent_gated,independent_shrinkage,known_probability_mse,8.725599753824746e-05,-3.6760884399115433e-06,0.00020824305119574525,100,False
+strong_common,False,120,gate_vs_pooled_shrinkage,independent_gated,pooled_shrinkage,known_probability_mse,0.0021914340499650633,0.001678651565477045,0.002730489494517329,100,False
+strong_common,False,120,gate_estimator_interaction,independent gate effect,discovery gate effect,known_probability_mse,-1.9045779277738728e-05,-0.00010091678374198245,5.329227475383579e-05,100,False
+strong_common,False,360,gate_with_independent_estimate,independent_gated,independent_fixed,known_probability_mse,0.00018680930096452128,5.4604986213562944e-05,0.00035018772782998965,100,True
+strong_common,False,360,gate_with_reused_estimate,discovery_gated,discovery_fixed,known_probability_mse,0.00022617838490975023,7.99456605280386e-05,0.0004028355485897884,100,False
+strong_common,False,360,independent_vs_reused_estimate,independent_fixed,discovery_fixed,known_probability_mse,0.0004792157006414368,0.00032127289065125354,0.0006381666060585149,100,False
+strong_common,False,360,gate_vs_tuned_independent,independent_gated,independent_shrinkage,known_probability_mse,0.000993887848084677,0.0007951470500918536,0.001203137337309119,100,False
+strong_common,False,360,gate_vs_pooled_shrinkage,independent_gated,pooled_shrinkage,known_probability_mse,0.0026585313213720483,0.0022511517744130878,0.0030735063865250213,100,False
+strong_common,False,360,gate_estimator_interaction,independent gate effect,discovery gate effect,known_probability_mse,-3.9369083945228944e-05,-0.00010331037171413111,7.787301162178834e-06,100,False
+strong_common,False,1080,gate_with_independent_estimate,independent_gated,independent_fixed,known_probability_mse,0.0,0.0,0.0,100,True
+strong_common,False,1080,gate_with_reused_estimate,discovery_gated,discovery_fixed,known_probability_mse,0.0,0.0,0.0,100,False
+strong_common,False,1080,independent_vs_reused_estimate,independent_fixed,discovery_fixed,known_probability_mse,0.00018185754326621826,8.255833992598472e-05,0.000281146972725804,100,False
+strong_common,False,1080,gate_vs_tuned_independent,independent_gated,independent_shrinkage,known_probability_mse,0.0014589475645141099,0.0013557850048339759,0.0015572468393649007,100,False
+strong_common,False,1080,gate_vs_pooled_shrinkage,independent_gated,pooled_shrinkage,known_probability_mse,0.0019540700591656455,0.001794001110684387,0.0021308186850717468,100,False
+strong_common,False,1080,gate_estimator_interaction,independent gate effect,discovery gate effect,known_probability_mse,0.0,0.0,0.0,100,False
+strong_common,True,120,gate_with_independent_estimate,independent_gated,independent_fixed,known_probability_mse,-0.00020949752304298805,-0.0004902555845315579,5.463308921739525e-06,100,True
+strong_common,True,120,gate_with_reused_estimate,discovery_gated,discovery_fixed,known_probability_mse,-0.0004998452607617339,-0.0009498775655686952,-0.0001405925889587676,100,False
+strong_common,True,120,independent_vs_reused_estimate,independent_fixed,discovery_fixed,known_probability_mse,-0.00034624395143535735,-0.0007362801876141474,4.7818141044704225e-05,100,False
+strong_common,True,120,gate_vs_tuned_independent,independent_gated,independent_shrinkage,known_probability_mse,-0.0002556912469417631,-0.00057799789348078,-2.2188471686690668e-05,100,False
+strong_common,True,120,gate_vs_pooled_shrinkage,independent_gated,pooled_shrinkage,known_probability_mse,-0.0022272419425996325,-0.0033371464659476425,-0.0011916519649812773,100,False
+strong_common,True,120,gate_estimator_interaction,independent gate effect,discovery gate effect,known_probability_mse,0.00029034773771874584,-8.85751905097867e-05,0.0006611961845673889,100,False
+strong_common,True,360,gate_with_independent_estimate,independent_gated,independent_fixed,known_probability_mse,0.0001871835364304695,-5.2887630961576786e-05,0.00042951197307696643,100,True
+strong_common,True,360,gate_with_reused_estimate,discovery_gated,discovery_fixed,known_probability_mse,-0.00012806215548013787,-0.00050373752793276,0.0002255764060907134,100,False
+strong_common,True,360,independent_vs_reused_estimate,independent_fixed,discovery_fixed,known_probability_mse,-0.00031842737821367336,-0.0007001329663946229,6.416397151479045e-05,100,False
+strong_common,True,360,gate_vs_tuned_independent,independent_gated,independent_shrinkage,known_probability_mse,0.00010029817933567934,-0.0001600104639060474,0.0003526970372705532,100,False
+strong_common,True,360,gate_vs_pooled_shrinkage,independent_gated,pooled_shrinkage,known_probability_mse,0.00023751241454936716,-0.00030703032413930266,0.000746386687669422,100,False
+strong_common,True,360,gate_estimator_interaction,independent gate effect,discovery gate effect,known_probability_mse,0.00031524569191060734,-3.221697185085284e-05,0.000658315551904988,100,False
+strong_common,True,1080,gate_with_independent_estimate,independent_gated,independent_fixed,known_probability_mse,0.0005652599469741676,0.00035500023251920155,0.0008060986482395255,100,True
+strong_common,True,1080,gate_with_reused_estimate,discovery_gated,discovery_fixed,known_probability_mse,0.0006216889583955431,0.0003653753274812261,0.0009081446202378758,100,False
+strong_common,True,1080,independent_vs_reused_estimate,independent_fixed,discovery_fixed,known_probability_mse,0.0003648811735085569,0.00019857597482324544,0.0005417772128403661,100,False
+strong_common,True,1080,gate_vs_tuned_independent,independent_gated,independent_shrinkage,known_probability_mse,0.0009836547655861596,0.0007266010700677938,0.0012489613469550233,100,False
+strong_common,True,1080,gate_vs_pooled_shrinkage,independent_gated,pooled_shrinkage,known_probability_mse,0.003311996009520222,0.002831521734767983,0.0038244043666153956,100,False
+strong_common,True,1080,gate_estimator_interaction,independent gate effect,discovery gate effect,known_probability_mse,-5.64290114213754e-05,-0.00018113819686751446,5.432501292315718e-05,100,False
+strong_rare,False,120,gate_with_independent_estimate,independent_gated,independent_fixed,known_probability_mse,-6.768758771746533e-05,-0.0001148216928881356,-2.9221202449733132e-05,100,True
+strong_rare,False,120,gate_with_reused_estimate,discovery_gated,discovery_fixed,known_probability_mse,-0.0001410409651752065,-0.00023972822497668995,-6.380170596989045e-05,100,False
+strong_rare,False,120,independent_vs_reused_estimate,independent_fixed,discovery_fixed,known_probability_mse,-7.4683648328194e-05,-0.00017090422948404945,5.669838152496894e-06,100,False
+strong_rare,False,120,gate_vs_tuned_independent,independent_gated,independent_shrinkage,known_probability_mse,-1.3923328283782073e-05,-3.761213380714076e-05,5.023725884972673e-06,100,False
+strong_rare,False,120,gate_vs_pooled_shrinkage,independent_gated,pooled_shrinkage,known_probability_mse,-0.000512740550126062,-0.0007744196373243348,-0.00030467948151173915,100,False
+strong_rare,False,120,gate_estimator_interaction,independent gate effect,discovery gate effect,known_probability_mse,7.335337745774118e-05,-7.141374102826243e-06,0.00016889669279791317,100,False
+strong_rare,False,360,gate_with_independent_estimate,independent_gated,independent_fixed,known_probability_mse,-4.3912466183359476e-05,-7.288779621368046e-05,-1.7886202517277326e-05,100,True
+strong_rare,False,360,gate_with_reused_estimate,discovery_gated,discovery_fixed,known_probability_mse,-0.00041727284153910424,-0.0004961252779537964,-0.0003470157990715495,100,False
+strong_rare,False,360,independent_vs_reused_estimate,independent_fixed,discovery_fixed,known_probability_mse,-0.0003939139665172679,-0.0004713842452456327,-0.00032425348318590523,100,False
+strong_rare,False,360,gate_vs_tuned_independent,independent_gated,independent_shrinkage,known_probability_mse,-6.282212597164412e-05,-9.397043726993079e-05,-3.416079119213958e-05,100,False
+strong_rare,False,360,gate_vs_pooled_shrinkage,independent_gated,pooled_shrinkage,known_probability_mse,-4.844146716388735e-05,-0.00012154141799759027,1.760528074793823e-05,100,False
+strong_rare,False,360,gate_estimator_interaction,independent gate effect,discovery gate effect,known_probability_mse,0.00037336037535574463,0.0003030818502329905,0.0004495634095887498,100,False
+strong_rare,False,1080,gate_with_independent_estimate,independent_gated,independent_fixed,known_probability_mse,6.38443072439726e-05,2.292829754462968e-05,0.00010656827109864753,100,True
+strong_rare,False,1080,gate_with_reused_estimate,discovery_gated,discovery_fixed,known_probability_mse,1.9669176782119245e-05,-4.2649552166445926e-05,8.333491627335415e-05,100,False
+strong_rare,False,1080,independent_vs_reused_estimate,independent_fixed,discovery_fixed,known_probability_mse,2.180847587813302e-07,-4.3619508979373016e-05,4.543444254904825e-05,100,False
+strong_rare,False,1080,gate_vs_tuned_independent,independent_gated,independent_shrinkage,known_probability_mse,0.00012341706303011987,7.498970328900796e-05,0.0001766345815949268,100,False
+strong_rare,False,1080,gate_vs_pooled_shrinkage,independent_gated,pooled_shrinkage,known_probability_mse,0.0005815816362163397,0.00048413143308570245,0.0006808964309371454,100,False
+strong_rare,False,1080,gate_estimator_interaction,independent gate effect,discovery gate effect,known_probability_mse,4.417513046185337e-05,1.0154632924799657e-05,7.797464856212911e-05,100,False
+strong_rare,True,120,gate_with_independent_estimate,independent_gated,independent_fixed,known_probability_mse,-0.00019892542824331624,-0.0003714648787211178,-7.484544895504155e-05,100,True
+strong_rare,True,120,gate_with_reused_estimate,discovery_gated,discovery_fixed,known_probability_mse,-0.0007114528374230206,-0.001182704428253421,-0.000320190800262339,100,False
+strong_rare,True,120,independent_vs_reused_estimate,independent_fixed,discovery_fixed,known_probability_mse,-0.0005642498049775525,-0.0009787296043249224,-0.00021268341544300383,100,False
+strong_rare,True,120,gate_vs_tuned_independent,independent_gated,independent_shrinkage,known_probability_mse,-0.000317344998710484,-0.0010000349398196706,9.794064487497014e-05,100,False
+strong_rare,True,120,gate_vs_pooled_shrinkage,independent_gated,pooled_shrinkage,known_probability_mse,-0.00271452331551401,-0.003715529211198498,-0.0018293945142615843,100,False
+strong_rare,True,120,gate_estimator_interaction,independent gate effect,discovery gate effect,known_probability_mse,0.0005125274091797043,0.0001741505887474992,0.0009147242820458324,100,False
+strong_rare,True,360,gate_with_independent_estimate,independent_gated,independent_fixed,known_probability_mse,-0.00038535270386321174,-0.0004953212066536887,-0.00027875323998930004,100,True
+strong_rare,True,360,gate_with_reused_estimate,discovery_gated,discovery_fixed,known_probability_mse,-0.002092262118140212,-0.0023851312914827355,-0.0018107240880666864,100,False
+strong_rare,True,360,independent_vs_reused_estimate,independent_fixed,discovery_fixed,known_probability_mse,-0.0018106747512770082,-0.0021272595229150397,-0.0015020363415260997,100,False
+strong_rare,True,360,gate_vs_tuned_independent,independent_gated,independent_shrinkage,known_probability_mse,-0.0002542911875307956,-0.0004326892823261722,-0.00011086534084402621,100,False
+strong_rare,True,360,gate_vs_pooled_shrinkage,independent_gated,pooled_shrinkage,known_probability_mse,-0.0012233638608511951,-0.001651975945098502,-0.0008138244856829342,100,False
+strong_rare,True,360,gate_estimator_interaction,independent gate effect,discovery gate effect,known_probability_mse,0.0017069094142770002,0.0014018250000713166,0.0020102984624488745,100,False
+strong_rare,True,1080,gate_with_independent_estimate,independent_gated,independent_fixed,known_probability_mse,-8.533244092256147e-05,-0.00012219328821486486,-4.7557522687110796e-05,100,True
+strong_rare,True,1080,gate_with_reused_estimate,discovery_gated,discovery_fixed,known_probability_mse,-0.0008361280350961477,-0.0009637575327541502,-0.0007094065243754829,100,False
+strong_rare,True,1080,independent_vs_reused_estimate,independent_fixed,discovery_fixed,known_probability_mse,-0.0007648497155350588,-0.000902872878008202,-0.0006287869833590743,100,False
+strong_rare,True,1080,gate_vs_tuned_independent,independent_gated,independent_shrinkage,known_probability_mse,-6.128156324417316e-05,-0.00011701190416091306,-1.5781475880238431e-06,100,False
+strong_rare,True,1080,gate_vs_pooled_shrinkage,independent_gated,pooled_shrinkage,known_probability_mse,-0.00022471631391043288,-0.0003554900752245555,-0.00010377604535510418,100,False
+strong_rare,True,1080,gate_estimator_interaction,independent gate effect,discovery gate effect,known_probability_mse,0.000750795594173586,0.0006246823743149073,0.0008809632258377853,100,False
+weak_common,False,120,gate_with_independent_estimate,independent_gated,independent_fixed,known_probability_mse,-7.061275027575576e-05,-0.00013461138187633064,-2.207929293155093e-05,100,True
+weak_common,False,120,gate_with_reused_estimate,discovery_gated,discovery_fixed,known_probability_mse,-0.00011241498872427346,-0.0002044403346647855,-4.3193115773828924e-05,100,False
+weak_common,False,120,independent_vs_reused_estimate,independent_fixed,discovery_fixed,known_probability_mse,-4.180223844851771e-05,-0.0001142074721463286,1.7418209705159855e-05,100,False
+weak_common,False,120,gate_vs_tuned_independent,independent_gated,independent_shrinkage,known_probability_mse,-2.310458684821937e-05,-4.7732323789016455e-05,-3.856764209677438e-06,100,False
+weak_common,False,120,gate_vs_pooled_shrinkage,independent_gated,pooled_shrinkage,known_probability_mse,-0.0003975027606727441,-0.0006438998146178016,-0.00020285654635893147,100,False
+weak_common,False,120,gate_estimator_interaction,independent gate effect,discovery gate effect,known_probability_mse,4.180223844851771e-05,-1.741820970515987e-05,0.00011420747214632856,100,False
+weak_common,False,360,gate_with_independent_estimate,independent_gated,independent_fixed,known_probability_mse,-1.5439325140760455e-05,-5.315363667146126e-05,1.904022481101319e-05,100,True
+weak_common,False,360,gate_with_reused_estimate,discovery_gated,discovery_fixed,known_probability_mse,-0.00023691929385343005,-0.00031032730987998175,-0.0001618064934033488,100,False
+weak_common,False,360,independent_vs_reused_estimate,independent_fixed,discovery_fixed,known_probability_mse,-0.0002446749937568724,-0.0003218622535189651,-0.00016583376579495587,100,False
+weak_common,False,360,gate_vs_tuned_independent,independent_gated,independent_shrinkage,known_probability_mse,1.298609156637052e-05,-1.6131677962350605e-05,4.0165967089040955e-05,100,False
+weak_common,False,360,gate_vs_pooled_shrinkage,independent_gated,pooled_shrinkage,known_probability_mse,-2.5678091347238147e-05,-0.00010035306960173278,4.3669499836889446e-05,100,False
+weak_common,False,360,gate_estimator_interaction,independent gate effect,discovery gate effect,known_probability_mse,0.00022147996871266958,0.00014623885002118775,0.0002941245207619685,100,False
+weak_common,False,1080,gate_with_independent_estimate,independent_gated,independent_fixed,known_probability_mse,8.202342252112603e-05,5.073305301379455e-05,0.00011747684953383676,100,True
+weak_common,False,1080,gate_with_reused_estimate,discovery_gated,discovery_fixed,known_probability_mse,4.9014881689359694e-05,-5.638521876230549e-07,0.00010029660201655518,100,False
+weak_common,False,1080,independent_vs_reused_estimate,independent_fixed,discovery_fixed,known_probability_mse,5.302894070735855e-06,-3.567427341889028e-05,4.407393550922521e-05,100,False
+weak_common,False,1080,gate_vs_tuned_independent,independent_gated,independent_shrinkage,known_probability_mse,0.00011337953651347201,7.807880266165232e-05,0.00015340259695338708,100,False
+weak_common,False,1080,gate_vs_pooled_shrinkage,independent_gated,pooled_shrinkage,known_probability_mse,0.0004170542125961109,0.000349805502656601,0.0004883508179292105,100,False
+weak_common,False,1080,gate_estimator_interaction,independent gate effect,discovery gate effect,known_probability_mse,3.300854083176634e-05,1.533227058048907e-06,6.753489952256353e-05,100,False
+weak_common,True,120,gate_with_independent_estimate,independent_gated,independent_fixed,known_probability_mse,-9.28272250369379e-05,-0.00018081434554484977,-2.4557448261524917e-05,100,True
+weak_common,True,120,gate_with_reused_estimate,discovery_gated,discovery_fixed,known_probability_mse,-0.0007667329279693194,-0.001339065601177532,-0.000295181881381353,100,False
+weak_common,True,120,independent_vs_reused_estimate,independent_fixed,discovery_fixed,known_probability_mse,-0.0006739057029323817,-0.0012206765079611306,-0.00021575597664954163,100,False
+weak_common,True,120,gate_vs_tuned_independent,independent_gated,independent_shrinkage,known_probability_mse,-0.0001320133184143918,-0.0003305662056448699,-7.023674005006046e-06,100,False
+weak_common,True,120,gate_vs_pooled_shrinkage,independent_gated,pooled_shrinkage,known_probability_mse,-0.0028081762857800237,-0.003883762412284429,-0.0018368138127596286,100,False
+weak_common,True,120,gate_estimator_interaction,independent gate effect,discovery gate effect,known_probability_mse,0.0006739057029323817,0.00021575597664954104,0.00122067650796113,100,False
+weak_common,True,360,gate_with_independent_estimate,independent_gated,independent_fixed,known_probability_mse,-0.00032673814764029786,-0.00043151550133324346,-0.0002278602010494125,100,True
+weak_common,True,360,gate_with_reused_estimate,discovery_gated,discovery_fixed,known_probability_mse,-0.0019211945195980356,-0.002226855368506651,-0.001630991455777118,100,False
+weak_common,True,360,independent_vs_reused_estimate,independent_fixed,discovery_fixed,known_probability_mse,-0.0018065191729046135,-0.0021444644005656583,-0.0014850762361864375,100,False
+weak_common,True,360,gate_vs_tuned_independent,independent_gated,independent_shrinkage,known_probability_mse,-0.0003130155172502231,-0.000527609151546867,-0.00014026732010303684,100,False
+weak_common,True,360,gate_vs_pooled_shrinkage,independent_gated,pooled_shrinkage,known_probability_mse,-0.0011216267410263372,-0.001548000517811346,-0.0007326850937275541,100,False
+weak_common,True,360,gate_estimator_interaction,independent gate effect,discovery gate effect,known_probability_mse,0.0015944563719577376,0.0013004687735908114,0.0019073062377889362,100,False
+weak_common,True,1080,gate_with_independent_estimate,independent_gated,independent_fixed,known_probability_mse,-7.122018977419141e-05,-0.00011386430569009328,-3.11748691556171e-05,100,True
+weak_common,True,1080,gate_with_reused_estimate,discovery_gated,discovery_fixed,known_probability_mse,-0.0007870682459914197,-0.000934663091090518,-0.0006374826627035608,100,False
+weak_common,True,1080,independent_vs_reused_estimate,independent_fixed,discovery_fixed,known_probability_mse,-0.000737091526457572,-0.0008811263224420854,-0.0005888632329585426,100,False
+weak_common,True,1080,gate_vs_tuned_independent,independent_gated,independent_shrinkage,known_probability_mse,-5.643068179877772e-05,-0.00010889873836871517,-1.2107310200397755e-05,100,False
+weak_common,True,1080,gate_vs_pooled_shrinkage,independent_gated,pooled_shrinkage,known_probability_mse,-0.0002673317287420132,-0.00040490840974024623,-0.0001457746988020693,100,False
+weak_common,True,1080,gate_estimator_interaction,independent gate effect,discovery gate effect,known_probability_mse,0.0007158480562172284,0.0005633851276206938,0.0008643573867898788,100,False

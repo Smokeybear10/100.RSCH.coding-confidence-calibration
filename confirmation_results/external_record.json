@@ -1,0 +1,46 @@
+{
+  "evaluated_at": "2026-11-08T00:34:29.221092+00:00",
+  "tasks": 161,
+  "candidates": 1610,
+  "source_folds_averaged": 5,
+  "source_budget": 339,
+  "source_freeze_sha256": "e66b45e33614dd4f8d66bd44aae4ac670bb7427a43b7e168bd8f4ebedcae6802",
+  "extraction_manifest_sha256": "0b8b05279ab0ef13003a93ed2ebf8fbf45099a69ac878967791708d342b14ede",
+  "extraction_rows_sha256": "a28bafd5715aab5e8ed0da4d4d736dfe94087f45522b90cea53f49ee708c5198",
+  "source": {
+    "purpose": "Frozen evaluation only; no external fitting, calibration, hyperparameter selection or outcome-dependent filtering",
+    "repository": "lavis-nlp/CALIBRI",
+    "revision": "7a4a7dc7aceb1b4a426c48761d0f128f2daf6a54",
+    "config": "multipl-e_qwen3",
+    "language": "py",
+    "expected_tasks": 161,
+    "expected_tasks_by_split": {
+      "train": 80,
+      "validation": 40,
+      "test": 41
+    },
+    "candidates_per_task": 10,
+    "sources": {
+      "train": {
+        "bytes": 23860599,
+        "sha256": "b7673b3cf0932ee88c3ff5144e50f999b3e93199b8676098ab950a570ae24a4d"
+      },
+      "validation": {
+        "bytes": 9404450,
+        "sha256": "81def9d7ac0739c3041858d1d28cb5e2b52700cb9a193577e4f4cf8c2e4504f2"
+      },
+      "test": {
+        "bytes": 12907039,
+        "sha256": "c0e13313a190fe4f6e42fc4c027103b23578be4b0c84a6d076f44f3174f6b4a0"
+      }
+    },
+    "upstream_license_url": "https://raw.githubusercontent.com/nuprl/MultiPL-E/3025a531af7450e7df8b96fe0440e9804480bbad/LICENSE",
+    "upstream_license_sha256": "6891bf32c7df59f0665d45a22bc09224ed122394eae4404048e0e4c7e4bc2f23",
+    "publication": "Aggregate evaluation results and source/provenance hashes only; per-row features, labels, prompts, programs and token records stay in the ignored local cache",
+    "overlap_check": "Report exact normalized-prompt hash overlap if original source prompts are locally available; identity namespaces and prompt hashes do not rule out semantic overlap or model-training contamination",
+    "aggregation": "Average frozen source-fold predictions per answer at the primary source budget, then evaluate once across the 161 external task clusters; no selection among source folds using external outcomes"
+  },
+  "publication": "Aggregate results only; no external row-level records published",
+  "overlap_audit": "Task identities use distinct namespaces; exact source-prompt overlap not checked because original source prompts are not cached; semantic overlap and pretraining contamination remain unverified",
+  "interval_scope": "Descriptive task bootstrap for 161 tasks conditional on the frozen five-pipeline ensemble"
+}

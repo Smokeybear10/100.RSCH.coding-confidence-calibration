@@ -1,0 +1,19 @@
+budget,contrast,left,right,metric,difference,low,high,task_clusters,primary
+120,gate_with_independent_estimate,independent_gated,independent_fixed,brier,2.072284304505469e-05,-0.00043499657997955304,0.000497160319226085,1055,True
+120,gate_with_reused_estimate,discovery_gated,discovery_fixed,brier,4.530221440820723e-05,-0.00030494887752595385,0.00041402971061290717,1055,False
+120,independent_vs_reused_estimate,independent_fixed,discovery_fixed,brier,2.457937136315253e-05,-8.556562600495549e-05,0.0001306243499711641,1055,False
+120,gate_vs_tuned_independent,independent_gated,independent_shrinkage,brier,-0.0002895743413844024,-0.0012197731828236691,0.0006604647286158166,1055,False
+120,gate_vs_pooled_shrinkage,independent_gated,pooled_shrinkage,brier,0.0009400905308891296,-0.00039722029334602075,0.0022672742248054712,1055,False
+120,gate_estimator_interaction,independent gate effect,discovery gate effect,brier,-2.457937136315253e-05,-0.0001306243499711642,8.556562600495549e-05,1055,False
+240,gate_with_independent_estimate,independent_gated,independent_fixed,brier,-0.00012459458155578154,-0.000582621656490663,0.00033738059514470584,1055,True
+240,gate_with_reused_estimate,discovery_gated,discovery_fixed,brier,-0.0003004245321163703,-0.0015263928602257217,0.0009082802300616832,1055,False
+240,independent_vs_reused_estimate,independent_fixed,discovery_fixed,brier,-0.00017582995056058886,-0.0013169594653434217,0.0009630867812591849,1055,False
+240,gate_vs_tuned_independent,independent_gated,independent_shrinkage,brier,0.0002899439719950016,-0.00034049636514384287,0.0009451069011693014,1055,False
+240,gate_vs_pooled_shrinkage,independent_gated,pooled_shrinkage,brier,-0.0015395195109607384,-0.0033884748043087475,0.00021893122253647407,1055,False
+240,gate_estimator_interaction,independent gate effect,discovery gate effect,brier,0.00017582995056058886,-0.0009630867812591853,0.0013169594653434213,1055,False
+339,gate_with_independent_estimate,independent_gated,independent_fixed,brier,0.0003101378238663875,-1.934474358349248e-06,0.0006315373525768691,1055,True
+339,gate_with_reused_estimate,discovery_gated,discovery_fixed,brier,0.0008197064355933536,-0.00021073314137250604,0.0019114593204420725,1055,False
+339,independent_vs_reused_estimate,independent_fixed,discovery_fixed,brier,0.0005028655266148941,-0.00038311973825545093,0.0014118346225093625,1055,False
+339,gate_vs_tuned_independent,independent_gated,independent_shrinkage,brier,0.00048790962787326523,-0.00014329591738592557,0.0011553484285664439,1055,False
+339,gate_vs_pooled_shrinkage,independent_gated,pooled_shrinkage,brier,-0.0006487758572793096,-0.001987560594652312,0.0006621023566582963,1055,False
+339,gate_estimator_interaction,independent gate effect,discovery gate effect,brier,-0.0005095686117269662,-0.0014089803032578507,0.00037366712859648025,1055,False

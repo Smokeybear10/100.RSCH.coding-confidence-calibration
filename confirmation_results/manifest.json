@@ -1,0 +1,20 @@
+{
+  "files": {
+    "external_contrasts.csv": "5d52aba7bfc41da6ca76fda49e7f7b088a137e0d4444fbb498971e046df312a8",
+    "external_metrics.csv": "7706db8203e72b358d33df49536693df09f6dae10988ffb3bdf482c3e65e91d5",
+    "external_record.json": "b9a63617f6781ef231a4f83003916811942ee485a554f8a293940a48e5966d7e",
+    "fitted_models.json": "75bc51936407ac72190d95022919c24af451496b5f4cc3f512de6d6fb1318cd9",
+    "protocol.json": "476f3f5a7818a1617d9260b2d7e28ef756718508a1981d5a0dee4f9881038a3d",
+    "simulation_contrasts.csv": "8414d61a00a48c08ae2d8419b9e00943a4886198adc865c5c12a786735feb8c4",
+    "simulation_fits.jsonl.gz": "23d64208dffc5c78272f6700b8ed94c12bbc0e8271db7b1efb84a67189f85b60",
+    "simulation_runs.csv": "d83a5afd04555694995eaef017fd662908b960746efd22a2b700597a8e559a01",
+    "simulation_summary.csv": "95d62d3d94e2b8f1e5b73f90a58fa23dce24389fc40f8595d1446832043ceb70",
+    "source_contrasts.csv": "94525743da00f1c94031ece9b1bb6f43cd14b8ee9bdb0465699bbef754708d43",
+    "source_freeze.json": "e66b45e33614dd4f8d66bd44aae4ac670bb7427a43b7e168bd8f4ebedcae6802",
+    "source_metrics.csv": "1a7acb5131825ef96f005bef53a4f3ec3700bb1375bb7f183afe1fd3229c5d62",
+    "source_predictions.csv.gz": "cda0d7a54c634a50ce845d5066bff6ab280fd2f8eb53307682771e67f83ea4b7",
+    "source_task_losses.csv.gz": "18e416830a98baa75df365a244f7afd4c2e0c28bc102b9d52920f8eafab6b51e",
+    "splits.json": "68c4b43def979790b1a05ebd69e76444ac6512522d39ce9b55c781952ddd55f2",
+    "summary.json": "50f75688c116837c997a44dd30f1dc464fdff7655e83095241e2a37854ce876e"
+  }
+}

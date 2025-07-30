@@ -1,0 +1,7 @@
+contrast,left,right,metric,difference,low,high,task_clusters,primary
+gate_with_independent_estimate,independent_gated,independent_fixed,brier,-0.0002867587626818735,-0.0006931518182797139,9.401129138433091e-05,161,True
+gate_with_reused_estimate,discovery_gated,discovery_fixed,brier,-0.0016624176980570655,-0.0037617456450436495,0.00030756985226279386,161,False
+independent_vs_reused_estimate,independent_fixed,discovery_fixed,brier,-0.001321019182469252,-0.0029976941532620927,0.00022857747334347712,161,False
+gate_vs_tuned_independent,independent_gated,independent_shrinkage,brier,3.5963496750712905e-05,-0.00030281920662919776,0.00037726856265108414,161,False
+gate_vs_pooled_shrinkage,independent_gated,pooled_shrinkage,brier,-0.00045928943736698544,-0.001333427916509047,0.0005344484720989107,161,False
+gate_estimator_interaction,independent gate effect,discovery gate effect,brier,0.001375658935375192,-0.00022437265953516758,0.003090055519826939,161,False
