@@ -1,0 +1,266 @@
+{
+  "created_at": "2026-11-07T01:02:23.955688+00:00",
+  "mode": "replay frozen models",
+  "reference_run": "a8630092fa9e",
+  "scope": "Existing public-data sample; no fresh held-out experiment or raw-feature re-extraction",
+  "python": "3.13.5",
+  "platform": "macOS-26.6.2-arm64-arm-64bit-Mach-O",
+  "dependencies": {
+    "numpy": "2.1.3",
+    "scipy": "1.15.3",
+    "scikit-learn": "1.6.1",
+    "pyarrow": "24.0.0",
+    "joblib": "1.4.2",
+    "threadpoolctl": "3.5.0"
+  },
+  "code_sha256": {
+    "research/__init__.py": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "research/data.py": "104476866364d5e5e1dfc5dd2e1d0bc4bd1408d66f205c182daf08083ed51cd3",
+    "research/figures.py": "1157ef3026030fe78345500df30e172454e5deebd50823ca705f4827bbbbefc6",
+    "research/methods.py": "7af904fb315022b75f3b71401a7a3fa40eed3aad5e4510d4b85756374623367d",
+    "research/reference.py": "5faf6f96cca69cfa133f3664ada6ccc5cc788b979114ee6f9c033e9eb04b8911",
+    "research/reproduce.py": "8cb6b17b146eb8624078954d58c86d92fb27e1556d3e313f1e60e852fe78c064",
+    "research/run.py": "ccbedb6bbd58cb212cd88b9f64ae9057e47075925eeca038886c8ca921ba31c7",
+    "research/test_publication.py": "4d7732bc12b1d514623c2db06696735de5efbabf256c34a898537477e49302eb",
+    "research/test_reproduce.py": "cdf00db8953f786fd29d7347e23065333c81e5b7c6cb3eeca0ff9d25d4726bcc",
+    "research/test_research.py": "8fd00db8373f1ea381e4d7f52052199b1b3433204975061ad91143c0f5af3bdf"
+  },
+  "reference_comparison": [
+    {
+      "split": "train",
+      "method": "logistic",
+      "maximum_probability_difference": 3.3306690738754696e-16,
+      "within_1e-8": true
+    },
+    {
+      "split": "train",
+      "method": "group_logistic",
+      "maximum_probability_difference": 3.3306690738754696e-16,
+      "within_1e-8": true
+    },
+    {
+      "split": "train",
+      "method": "token_only",
+      "maximum_probability_difference": 2.220446049250313e-16,
+      "within_1e-8": true
+    },
+    {
+      "split": "train",
+      "method": "structure_only",
+      "maximum_probability_difference": 2.7755575615628914e-16,
+      "within_1e-8": true
+    },
+    {
+      "split": "train",
+      "method": "platt",
+      "maximum_probability_difference": 4.440892098500626e-16,
+      "within_1e-8": true
+    },
+    {
+      "split": "train",
+      "method": "isotonic",
+      "maximum_probability_difference": 2.7755575615628914e-14,
+      "within_1e-8": true
+    },
+    {
+      "split": "train",
+      "method": "likelihood",
+      "maximum_probability_difference": 0.0,
+      "within_1e-8": true
+    },
+    {
+      "split": "train",
+      "method": "multicalibration",
+      "maximum_probability_difference": 4.440892098500626e-16,
+      "within_1e-8": true
+    },
+    {
+      "split": "train",
+      "method": "score_bins",
+      "maximum_probability_difference": 4.440892098500626e-16,
+      "within_1e-8": true
+    },
+    {
+      "split": "calibration",
+      "method": "logistic",
+      "maximum_probability_difference": 4.440892098500626e-16,
+      "within_1e-8": true
+    },
+    {
+      "split": "calibration",
+      "method": "group_logistic",
+      "maximum_probability_difference": 3.3306690738754696e-16,
+      "within_1e-8": true
+    },
+    {
+      "split": "calibration",
+      "method": "token_only",
+      "maximum_probability_difference": 2.220446049250313e-16,
+      "within_1e-8": true
+    },
+    {
+      "split": "calibration",
+      "method": "structure_only",
+      "maximum_probability_difference": 2.220446049250313e-16,
+      "within_1e-8": true
+    },
+    {
+      "split": "calibration",
+      "method": "platt",
+      "maximum_probability_difference": 4.440892098500626e-16,
+      "within_1e-8": true
+    },
+    {
+      "split": "calibration",
+      "method": "isotonic",
+      "maximum_probability_difference": 5.562217353372034e-14,
+      "within_1e-8": true
+    },
+    {
+      "split": "calibration",
+      "method": "likelihood",
+      "maximum_probability_difference": 0.0,
+      "within_1e-8": true
+    },
+    {
+      "split": "calibration",
+      "method": "multicalibration",
+      "maximum_probability_difference": 4.440892098500626e-16,
+      "within_1e-8": true
+    },
+    {
+      "split": "calibration",
+      "method": "score_bins",
+      "maximum_probability_difference": 4.440892098500626e-16,
+      "within_1e-8": true
+    },
+    {
+      "split": "validation",
+      "method": "logistic",
+      "maximum_probability_difference": 4.440892098500626e-16,
+      "within_1e-8": true
+    },
+    {
+      "split": "validation",
+      "method": "group_logistic",
+      "maximum_probability_difference": 3.3306690738754696e-16,
+      "within_1e-8": true
+    },
+    {
+      "split": "validation",
+      "method": "token_only",
+      "maximum_probability_difference": 2.220446049250313e-16,
+      "within_1e-8": true
+    },
+    {
+      "split": "validation",
+      "method": "structure_only",
+      "maximum_probability_difference": 3.3306690738754696e-16,
+      "within_1e-8": true
+    },
+    {
+      "split": "validation",
+      "method": "platt",
+      "maximum_probability_difference": 4.440892098500626e-16,
+      "within_1e-8": true
+    },
+    {
+      "split": "validation",
+      "method": "isotonic",
+      "maximum_probability_difference": 1.509903313490213e-14,
+      "within_1e-8": true
+    },
+    {
+      "split": "validation",
+      "method": "likelihood",
+      "maximum_probability_difference": 0.0,
+      "within_1e-8": true
+    },
+    {
+      "split": "validation",
+      "method": "multicalibration",
+      "maximum_probability_difference": 4.440892098500626e-16,
+      "within_1e-8": true
+    },
+    {
+      "split": "validation",
+      "method": "score_bins",
+      "maximum_probability_difference": 4.440892098500626e-16,
+      "within_1e-8": true
+    },
+    {
+      "split": "test",
+      "method": "logistic",
+      "maximum_probability_difference": 2.7755575615628914e-16,
+      "within_1e-8": true
+    },
+    {
+      "split": "test",
+      "method": "group_logistic",
+      "maximum_probability_difference": 3.3306690738754696e-16,
+      "within_1e-8": true
+    },
+    {
+      "split": "test",
+      "method": "token_only",
+      "maximum_probability_difference": 2.220446049250313e-16,
+      "within_1e-8": true
+    },
+    {
+      "split": "test",
+      "method": "structure_only",
+      "maximum_probability_difference": 2.7755575615628914e-16,
+      "within_1e-8": true
+    },
+    {
+      "split": "test",
+      "method": "platt",
+      "maximum_probability_difference": 4.440892098500626e-16,
+      "within_1e-8": true
+    },
+    {
+      "split": "test",
+      "method": "isotonic",
+      "maximum_probability_difference": 1.509903313490213e-14,
+      "within_1e-8": true
+    },
+    {
+      "split": "test",
+      "method": "likelihood",
+      "maximum_probability_difference": 0.0,
+      "within_1e-8": true
+    },
+    {
+      "split": "test",
+      "method": "multicalibration",
+      "maximum_probability_difference": 4.440892098500626e-16,
+      "within_1e-8": true
+    },
+    {
+      "split": "test",
+      "method": "score_bins",
+      "maximum_probability_difference": 4.440892098500626e-16,
+      "within_1e-8": true
+    }
+  ],
+  "all_probabilities_match": true,
+  "maximum_metric_differences": {
+    "brier": 1.1102230246251565e-16,
+    "log_loss": 3.885780586188048e-16,
+    "ece": 0.0005687203791468726,
+    "worst": 1.1102230246251565e-16
+  },
+  "table_rows": {
+    "metrics": 36,
+    "slices": 1056,
+    "comparisons": 9,
+    "risk_coverage": 99,
+    "subsets": 18,
+    "selection": 12,
+    "metric_comparison": 144
+  },
+  "checks": {
+    "reference_hashes": true,
+    "bounded_finite_probabilities": true
+  }
+}

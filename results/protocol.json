@@ -1,0 +1,41 @@
+{
+  "version": 1,
+  "question": "Does group-aware post-processing improve held-out correctness probabilities beyond score-only calibration, and does this translate into better selective acceptance?",
+  "dataset": "lavis-nlp/CALIBRI",
+  "revision": "7a4a7dc7aceb1b4a426c48761d0f128f2daf6a54",
+  "benchmark": "LiveCodeBench",
+  "primary": "livecodebench_qwen3",
+  "alternate": "livecodebench_gpt-oss",
+  "seed": 73129,
+  "base_train_fraction": 0.6,
+  "bins": 5,
+  "epsilon_grid": [
+    0.03,
+    0.06,
+    0.1
+  ],
+  "support_grid": [
+    20,
+    40
+  ],
+  "max_updates": 100,
+  "bootstrap_replicates": 1000,
+  "validation_escalation_budget": 0.3,
+  "primary_comparison": "multicalibration minus Platt, paired test Brier score",
+  "selection_metric": "validation Brier score; ties prefer fewer patches",
+  "groups": [
+    "all",
+    "long_prompt",
+    "long_code",
+    "nested_code",
+    "uses_imports",
+    "empty_code",
+    "long_prompt&nested_code"
+  ],
+  "candidate_policy": "All ten recorded candidates, equally weighted within task. No best-of-ten selection. Alternate candidate j is paired with primary candidate j; index pairing is arbitrary, not a repair workflow.",
+  "split_policy": "Preserve official validation and test partitions. Hash-sort official training task IDs, using the first 60% for base training and the rest for calibration. Never split sibling completions.",
+  "label": "Publisher-provided is_correct from benchmark tests; not independently rerun and not a proof of semantic correctness.",
+  "feature_policy": "Only prompt, generated program, and sampled-token log probabilities. No outcomes, difficulty annotations, task IDs, alternate-model features, or other candidate outcomes enter the confidence predictor.",
+  "cost_policy": "User-selected relative cost scenario only. No measured dollars, latency, or Cursor deployment data.",
+  "scope": "Independent offline replication and routing extension using public research data. No claim of a novel multicalibration algorithm, Cursor affiliation, or production validation. Protocol saved before this pipeline's test evaluation; not externally preregistered."
+}
