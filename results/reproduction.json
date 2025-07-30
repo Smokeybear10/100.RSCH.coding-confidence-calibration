@@ -1,5 +1,5 @@
 {
-  "created_at": "2026-11-07T01:02:23.955688+00:00",
+  "created_at": "2026-11-07T01:03:07.848151+00:00",
   "mode": "replay frozen models",
   "reference_run": "a8630092fa9e",
   "scope": "Existing public-data sample; no fresh held-out experiment or raw-feature re-extraction",
@@ -19,7 +19,7 @@
     "research/figures.py": "1157ef3026030fe78345500df30e172454e5deebd50823ca705f4827bbbbefc6",
     "research/methods.py": "7af904fb315022b75f3b71401a7a3fa40eed3aad5e4510d4b85756374623367d",
     "research/reference.py": "5faf6f96cca69cfa133f3664ada6ccc5cc788b979114ee6f9c033e9eb04b8911",
-    "research/reproduce.py": "8cb6b17b146eb8624078954d58c86d92fb27e1556d3e313f1e60e852fe78c064",
+    "research/reproduce.py": "cc6c725fd22f5403c5cd7a0a4345246bf318342d2e4bd981d18821405aa04961",
     "research/run.py": "ccbedb6bbd58cb212cd88b9f64ae9057e47075925eeca038886c8ca921ba31c7",
     "research/test_publication.py": "4d7732bc12b1d514623c2db06696735de5efbabf256c34a898537477e49302eb",
     "research/test_reproduce.py": "cdf00db8953f786fd29d7347e23065333c81e5b7c6cb3eeca0ff9d25d4726bcc",
