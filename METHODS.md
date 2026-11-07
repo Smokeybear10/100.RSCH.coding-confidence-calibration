@@ -1,5 +1,7 @@
 # Methods
 
+This chapter describes the original single-split reference. The repeated evaluation, learned auditing and decision-benefit extension is specified in [ADVANCED_METHODS.md](ADVANCED_METHODS.md).
+
 ## Observation, target and data
 
 One observation is one task paired with one recorded primary coding answer. Its target is the publisher's `is_correct`, converted to 0 or 1. Passing is an outcome on the benchmark tests, not a guarantee of correctness on every input.
