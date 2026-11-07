@@ -28,7 +28,7 @@ class PublicationChecks(unittest.TestCase):
             self.assertAlmostEqual(float(row["success"]), expected["routing"]["success"], places=12)
 
     def test_notebooks_are_portable_and_have_saved_successful_outputs(self):
-        for relative in ("analysis.ipynb", "reconstruction/cursor-confidence-walkthrough.ipynb"):
+        for relative in ("analysis.ipynb", "advanced_analysis.ipynb", "reconstruction/cursor-confidence-walkthrough.ipynb"):
             with self.subTest(notebook=relative):
                 path = PROJECT / relative
                 notebook = nbformat.read(path, as_version=4)

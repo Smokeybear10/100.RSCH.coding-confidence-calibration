@@ -35,3 +35,12 @@ jobs:
           jupyter nbconvert --to notebook --execute analysis.ipynb
           --output checked-analysis.ipynb --output-dir work
           --ExecutePreprocessor.timeout=120
+      - name: Run grouped evaluation and synthetic controls
+        run: |
+          python -m research.advanced --output work/ci-advanced
+          python -m research.simulations --output work/ci-simulations
+      - name: Execute the advanced results notebook
+        run: >-
+          jupyter nbconvert --to notebook --execute advanced_analysis.ipynb
+          --output checked-advanced.ipynb --output-dir work
+          --ExecutePreprocessor.timeout=120
