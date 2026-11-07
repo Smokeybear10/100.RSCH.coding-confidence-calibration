@@ -6,3 +6,4 @@ work/
 /research/data
 reconstruction/*.json
 research/runs/*.in-progress/
+/research/runs/*/predictions.json

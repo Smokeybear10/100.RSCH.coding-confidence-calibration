@@ -62,22 +62,24 @@ def partition_tasks(tasks: list, protocol: dict) -> tuple[dict, dict]:
     return partitions, manifests
 
 
-def run(protocol_path: Path, verify: bool = False) -> Path:
+def run(protocol_path: Path, verify: bool = False, output: Path | None = None) -> Path:
     protocol = json.loads(protocol_path.read_text())
+    output = output.resolve() if output is not None else ROOT / "runs"
+    output.mkdir(parents=True, exist_ok=True)
     code_files = sorted(ROOT.glob("*.py")) + [ROOT.parent / "requirements-research.txt"]
     provenance = {"protocol_sha256": digest(protocol_path),
         "code": {str(path.relative_to(ROOT.parent)): digest(path) for path in code_files},
         "dependencies": {name: importlib.metadata.version(name) for name in ("numpy", "scipy", "scikit-learn", "pyarrow", "joblib", "threadpoolctl")},
         "python": platform.python_version()}
     run_id = hashlib.sha256(json.dumps(provenance, sort_keys=True).encode()).hexdigest()[:12]
-    destination = ROOT / "runs" / run_id
+    destination = output / run_id
     if (destination / "summary.json").exists():
         manifest = json.loads((destination / "manifest.json").read_text())
         if any(digest(destination / filename) != expected for filename, expected in manifest["files"].items()):
             raise ValueError("An immutable run artifact has changed")
         if not verify:
             print(f"Existing immutable run: {destination}", flush=True)
-            save(ROOT / "runs" / "latest.json", {"run_id": run_id})
+            save(output / "latest.json", {"run_id": run_id})
             return destination
     source = prepare(protocol)
     partitions, manifests = partition_tasks(source["tasks"], protocol)
@@ -111,7 +113,7 @@ def run(protocol_path: Path, verify: bool = False) -> Path:
             predictions[split][method] = replay(predictions[split]["platt"], data["groups"], names, selected[method])
     frozen_thresholds = {method: budget_threshold(scores, protocol["validation_escalation_budget"], val["keys"])
                          for method, scores in predictions["validation"].items()}
-    working = ROOT / "runs" / f"{run_id}.in-progress"
+    working = output / f"{run_id}.in-progress"
     working.mkdir(parents=True, exist_ok=True)
     # All learned objects and operating thresholds are serialized before test metrics.
     frozen = {"models": models, "group_thresholds": thresholds, "group_names": names,
@@ -202,7 +204,7 @@ def run(protocol_path: Path, verify: bool = False) -> Path:
         bundle.write(working / "protocol.json", "research/protocol.json")
         bundle.writestr("research/runs/latest.json", json.dumps({"run_id": run_id}))
     working.rename(destination)
-    save(ROOT / "runs" / "latest.json", {"run_id": run_id})
+    save(output / "latest.json", {"run_id": run_id})
     print(json.dumps({"run_id": run_id, "test_tasks": len(manifests["test"]),
                       "primary_comparison": summary["comparisons"]["multicalibration"],
                       "routing_comparison": summary["routing_comparison"]}, indent=2), flush=True)
@@ -213,5 +215,6 @@ if __name__ == "__main__":
     parser = argparse.ArgumentParser()
     parser.add_argument("--protocol", type=Path, default=ROOT / "protocol.json")
     parser.add_argument("--verify", action="store_true", help="Refit from cached data and verify an existing run bit-for-bit")
+    parser.add_argument("--output", type=Path, help="Directory for new runs, for example work/raw-rebuild")
     args = parser.parse_args()
-    run(args.protocol, args.verify)
+    run(args.protocol, args.verify, args.output)
