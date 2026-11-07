@@ -1,0 +1,37 @@
+name: research checks
+
+on:
+  push:
+  pull_request:
+
+permissions:
+  contents: read
+
+jobs:
+  offline:
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+    strategy:
+      fail-fast: false
+      matrix:
+        python: ["3.11", "3.13"]
+    steps:
+      - uses: actions/checkout@v7
+      - uses: actions/setup-python@v7
+        with:
+          python-version: ${{ matrix.python }}
+          cache: pip
+          cache-dependency-path: requirements.txt
+      - name: Install publication dependencies
+        run: python -m pip install -r requirements.txt
+      - name: Check algorithms, archive and saved publication
+        run: python -m unittest discover -s research -t . -v
+      - name: Replay and refit without source downloads
+        run: |
+          python -m research.reproduce --output work/ci-replay
+          python -m research.reproduce --refit --output work/ci-refit
+      - name: Execute the offline analysis notebook
+        run: >-
+          jupyter nbconvert --to notebook --execute analysis.ipynb
+          --output checked-analysis.ipynb --output-dir work
+          --ExecutePreprocessor.timeout=120
