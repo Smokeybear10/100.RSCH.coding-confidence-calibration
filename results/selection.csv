@@ -1,0 +1,13 @@
+method,epsilon,support,validation_brier,updates,status
+multicalibration,0.03,20,0.10973391161238581,14,converged_on_fit_cells
+multicalibration,0.03,40,0.10759979934636062,12,converged_on_fit_cells
+multicalibration,0.06,20,0.10903554385507039,4,converged_on_fit_cells
+multicalibration,0.06,40,0.10845453176040344,0,converged_on_fit_cells
+multicalibration,0.1,20,0.10921020099079856,2,converged_on_fit_cells
+multicalibration,0.1,40,0.10845453176040344,0,converged_on_fit_cells
+score_bins,0.03,20,0.10845453176040344,0,converged_on_fit_cells
+score_bins,0.03,40,0.10845453176040344,0,converged_on_fit_cells
+score_bins,0.06,20,0.10845453176040344,0,converged_on_fit_cells
+score_bins,0.06,40,0.10845453176040344,0,converged_on_fit_cells
+score_bins,0.1,20,0.10845453176040344,0,converged_on_fit_cells
+score_bins,0.1,40,0.10845453176040344,0,converged_on_fit_cells
