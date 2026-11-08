@@ -1,10 +1,10 @@
 # Multicalibration for Coding Confidence
 
-Tests whether corrections learned from miscalibrated subgroups improve confidence estimates for coding answers.
+Tests whether an independent check improves learned subgroup corrections beyond simply using smaller updates.
 
 ## Quick Start
 
-Use Python 3.11 or 3.13. The [notebook](advanced_analysis.ipynb) includes saved outputs and reads the bundled numerical results offline.
+The [notebook](confirmation_analysis.ipynb) contains saved outputs and reads the included results offline. Use Python 3.13 for fresh feature extraction; offline checks also run on Python 3.11.
 
 ```bash
 git clone https://github.com/Smokeybear10/coding-confidence-calibration.git
@@ -12,59 +12,68 @@ cd coding-confidence-calibration
 python -m venv .venv
 source .venv/bin/activate
 python -m pip install -r requirements.txt
-jupyter lab advanced_analysis.ipynb
+jupyter lab confirmation_analysis.ipynb
 ```
 
-## Experiment
+## Design
 
-An overall calibration curve can hide errors within smaller groups. A tree can search for those groups, but choosing the largest observed error can also select noise. The question is whether a discovered correction survives a separate confirmation sample.
+The earlier experiment changed several things together when it added confirmation. This study freezes one tree-selected subgroup and separates two choices: where the correction is estimated, and whether an independent sample must confirm the proposal. The four matched arms share their rule, estimation task count, support check and step size.
 
-The data are recorded CALIBRI/LiveCodeBench outputs[^1]: 1,055 tasks, ten primary answers per task, and sixteen features describing token probabilities, code structure, size and missing outputs. Logistic regression and histogram gradient boosting each receive five treatments: raw scores, Platt scaling, fixed-group corrections, tree corrections, and tree corrections checked on fresh task blocks.
+Three controls select an update step, including zero, using the same validation tasks. One of them pools all correction tasks. Equal available label budgets are reported alongside per-policy query requirements. This isolates one correction rather than claiming a full iterative multicalibration procedure.
 
-Three repeats of five outer folds keep all answers to a task together. Model fitting, Platt scaling, subgroup discovery, confirmation, routing selection and testing use separate task sets. [Methods](ADVANCED_METHODS.md) document the settings and splits.
+| Evidence | Size | Purpose |
+| --- | --- | --- |
+| Recorded LiveCodeBench outputs[^1] | 1,055 tasks; five outer folds | Exploratory source comparison |
+| Known-probability simulations | 24 settings; 100 fitting seeds each | Separate selected noise, genuine bias and task dependence |
+| MultiPL-E Python outputs[^1][^2] | 161 tasks; ten answers each | Evaluate frozen source-trained pipelines |
+
+The [protocol](research/confirmation_protocol.json) was versioned before these evaluation runs. [Methods and related work](CONFIRMATION_STUDY.md) explain the matched estimates, data roles and controls.
 
 ## Findings
 
-Raw logistic regression has the lowest mean Brier score in this configuration. Confirmed corrections produce nearly the same mean Brier as Platt scaling; the paired difference interval spans zero.
+**Independent estimation matters before confirmation.** At the largest synthetic budget with task-shared label noise and calibrated starting scores, probability MSE is 0.001064 using a reused estimate, 0.000118 using an independent estimate, and 0.000002 after adding the gate.
 
-| Predictor / calibration | Mean Brier | Mean log loss |
+**The gate can discard useful corrections.** With strong common bias and task-shared noise, gating increases MSE by 0.000565 relative to the same independent estimate without a gate; the paired interval is [0.000355, 0.000806]. With independent label draws at that budget, it accepts every proposal and changes nothing. Pooled, validation-tuned updates perform better in both strong-bias cases.
+
+**External improvement is unestablished.** Platt scores without a subgroup update have the lowest observed external Brier. The gate-versus-ungated independent-estimate interval spans zero. Avoiding harmful corrections in a simulation does not establish a coding-benchmark gain.
+
+| Method | Source OOF Brier | External ensemble Brier |
 | --- | ---: | ---: |
-| Logistic / raw | 0.1087 | 0.3301 |
-| Logistic / Platt | 0.1106 | 0.3368 |
-| Logistic / fixed groups | 0.1143 | 0.3459 |
-| Logistic / tree audit | 0.1113 | 0.3378 |
-| Logistic / confirmed tree | 0.1105 | 0.3365 |
-| Boosted / raw | 0.1111 | 0.3374 |
+| Raw logistic | 0.1071 | 0.0775 |
+| Platt / no subgroup update | 0.1100 | 0.0740 |
+| Reused estimate / fixed step | 0.1090 | 0.0761 |
+| Independent estimate / fixed step | 0.1095 | 0.0748 |
+| Reused estimate / gate | 0.1098 | 0.0745 |
+| Independent estimate / gate | 0.1098 | 0.0745 |
+| Reused estimate / tuned step | 0.1104 | 0.0765 |
+| Independent estimate / tuned step | 0.1093 | 0.0745 |
+| Pooled auditor / tuned step | 0.1105 | 0.0750 |
 
-Lower is better. These are means across fifteen outer folds. The [full comparison](advanced_results/fold_metrics.csv) contains all ten pipelines, including calibrated boosted models.
+Lower is better. Source numbers average held-out fold scores at the 339-task audit/tuning budget; external numbers evaluate the five-pipeline probability ensemble on another task set. These are different evaluation summaries. [Source contrasts](confirmation_results/source_contrasts.csv) and [external contrasts](confirmation_results/external_contrasts.csv) retain the uncertainty estimates.
 
-One proposal illustrates the problem. In the first fold, answers with a function definition and scores between 0.4 and 0.6 appeared underconfident by 17 percentage points during discovery. The confirmation residual was -6.5 points, with a wide interval spanning zero. The filter rejected the correction. The notebook shows the complete proposal trace.
+![Null correction rates and the incremental confirmation effect under task-correlated outcomes](confirmation_results/gate_diagnostics.png)
 
-Synthetic controls make the noise measurable because the true probabilities are known. With 120 calibration tasks and already-calibrated scores, unconfirmed corrections add mean probability MSE of 0.0130; confirmation applies no correction. With a real interaction and 1,080 tasks, the unconfirmed auditor removes more error. Confirmation costs detection power.
-
-![Probability error under calibrated scores and a hidden interaction](simulation_results/simulation_diagnostics.png)
-
-A routing follow-up predicts how much an alternate answer helps, rather than using correctness confidence alone. Its value depends on the assumed failure and generation costs. [Routing results](ADVANCED_METHODS.md#escalation-benefit-and-decision-costs), [sample-budget curves](advanced_results/sample_complexity.csv) and [feature-mixture checks](advanced_results/mixture_shift.csv) are reported separately.
+The [full synthetic grid](confirmation_results/simulation_summary.csv) includes weak and rare bias, independent labels, and all budgets. Improvements in the weak/rare task-shared cases mostly reflect retaining the original scores, rather than recovering the hidden bias.
 
 ## Reproduce
 
 ```bash
-python -m research.advanced --output work/new-advanced
-python -m research.simulations --output work/new-simulations
-python -m research.advanced_figures --results work/new-advanced --simulations work/new-simulations
+python -m research.external --output work/new-external --protocol research/confirmation_protocol.json
+python -m research.confirmation_study --output work/new-confirmation --external work/new-external
+python -m research.confirmation_figures --results work/new-confirmation
 python -m unittest discover -s research -t . -v
 ```
 
-Use fresh output directories. Full runs save predictions, rules, split assignments, protocol snapshots and file hashes. `--smoke` runs one fold or one simulation seed.
+Use fresh directories. Source and synthetic experiments run without `--external`; `--smoke` uses separate pilot seeds and skips external evaluation. The external adapter downloads about 46 MB of pinned public files. External records stay local; the repository publishes aggregate transfer results.
 
-## Scope
+## Scope and Earlier Experiments
 
-This is an exploratory public-data implementation of existing multicalibration ideas[^2][^3]. All benchmark experiments reuse an inspected sample. The 1,055 tasks remain the units of evidence across repeated fits. Bootstrap intervals are descriptive and omit refitting and shared-training dependence; confirmation establishes no population multicalibration guarantee. Costs are assumed, and empty-code extraction and publisher labels limit interpretation. These results do not evaluate a private Cursor deployment.
+Fresh splits and conservative updates already exist in multicalibration implementations.[^3] This study tests their empirical tradeoffs under its fixed procedure and generators. Bootstrap confirmation is approximate. Synthetic intervals describe independent fitting-seed replications within each setting; source and external intervals are conditional/descriptive. There is no simultaneous-coverage claim. The source sample was already inspected; external benchmark contamination and semantic overlap remain unverified.
 
-The [original analysis](analysis.ipynb), [original methods](METHODS.md), [reproduction record](REPRODUCIBILITY.md) and [raw-data walkthrough](reconstruction/cursor-confidence-walkthrough.ipynb) document the earlier single-split experiment and feature extraction.
+[Earlier calibration and routing experiments](advanced_analysis.ipynb) have their own [methods](ADVANCED_METHODS.md). The [original analysis](analysis.ipynb), [feature definitions](METHODS.md), [reproduction record](REPRODUCIBILITY.md) and [raw-data walkthrough](reconstruction/cursor-confidence-walkthrough.ipynb) preserve the initial experiment. All studies use public recorded outputs, separately from private Cursor work.
 
 [^1]: [CALIBRI](https://huggingface.co/datasets/lavis-nlp/CALIBRI), revision `7a4a7dc7aceb1b4a426c48761d0f128f2daf6a54`.
-[^2]: Hebert-Johnson et al. (2018), [Multicalibration](https://proceedings.mlr.press/v80/hebert-johnson18a.html).
-[^3]: Detommaso et al. (2024), [Multicalibration for Confidence Scoring in LLMs](https://proceedings.mlr.press/v235/detommaso24a.html).
+[^2]: [MultiPL-E](https://github.com/nuprl/MultiPL-E). Its pinned upstream conditions are recorded by the evaluation-only adapter.
+[^3]: [MCBoost implementation guidance](https://mlr-org.github.io/mcboost/articles/mcboost_basics_extensions.html); further primary references are in [CONFIRMATION_STUDY.md](CONFIRMATION_STUDY.md).
 
 Built by Thomas Ou
